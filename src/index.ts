@@ -1,11 +1,8 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-import dotenvExpand from "dotenv-expand";
+
 import stockRouter from "./stock.router";
 
-const currentEnvs = dotenv.config();
-dotenvExpand.expand(currentEnvs);
 
 const app = express();
 app
