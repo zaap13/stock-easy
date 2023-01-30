@@ -8,7 +8,7 @@ import {
   deleteProductService,
 } from "../services/productsService";
 
-export async function getAllProductsController(
+export async function getProductsController(
   req: Request,
   res: Response
 ): Promise<void> {
@@ -16,7 +16,7 @@ export async function getAllProductsController(
   res.send(products);
 }
 
-export async function getSingleProductController(
+export async function getProductController(
   req: Request,
   res: Response
 ): Promise<void> {
@@ -29,7 +29,7 @@ export async function getSingleProductController(
   res.send(product);
 }
 
-export async function createNewProductController(
+export async function createProductController(
   req: Request,
   res: Response
 ): Promise<void> {
@@ -38,7 +38,7 @@ export async function createNewProductController(
   res.send({ message: "Product created" });
 }
 
-export async function updateExistingProductController(
+export async function updateProductController(
   req: Request,
   res: Response
 ): Promise<void> {
@@ -48,7 +48,7 @@ export async function updateExistingProductController(
   res.send({ message: "Product updated" });
 }
 
-export async function deleteProductFromDBController(
+export async function deleteProductController(
   req: Request,
   res: Response
 ): Promise<void> {
