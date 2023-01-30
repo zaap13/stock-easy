@@ -1,15 +1,16 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 
-import stockRouter from "./stock.router";
-
+import productsRoutes from "./routes/productsRoutes";
+import suppliersRoutes from "./routes/suppliersRoutes";
 
 const app = express();
 app
   .use(cors())
   .use(express.json())
-  .get("/health", (req: Request, res: Response) => res.send("OK"))
-  .use("/stock", stockRouter);
+  .use("/products", productsRoutes)
+  .use("/suppliers", suppliersRoutes)
+  .get("/health", (req: Request, res: Response) => res.send("OK"));
 
 const port = process.env.PORT || 4000;
 
