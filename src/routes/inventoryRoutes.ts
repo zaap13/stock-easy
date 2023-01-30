@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { updateInventoryController } from "../controllers/inventoryController";
 
-const router = Router();
+const inventoryRouter = Router();
 
-router.put("/:id", updateInventoryController);
+inventoryRouter.put("/:id", updateInventoryController);
 
-export default router;
+export default inventoryRouter;

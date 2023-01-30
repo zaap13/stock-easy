@@ -12,6 +12,6 @@ export const updateInventoryController = async (
     await updateInventoryService(Number(id), quantity);
     return res.status(200).send({ message: "Inventory updated successfully" });
   } catch (error) {
-    return res.sendStatus(400);
+    return res.status(400).send(error);
   }
 };
