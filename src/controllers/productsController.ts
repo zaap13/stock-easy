@@ -33,19 +33,27 @@ export async function createProductController(
   req: Request,
   res: Response
 ): Promise<void> {
-  const newProduct = req.body as Product;
-  await createProductService(newProduct);
-  res.send({ message: "Product created" });
+  try {
+    const newProduct = req.body as Product;
+    await createProductService(newProduct);
+    res.send({ message: "Product created" });
+  } catch (error) {
+    res.sendStatus(404);
+  }
 }
 
 export async function updateProductController(
   req: Request,
   res: Response
 ): Promise<void> {
-  const { id } = req.params;
-  const updatedProduct = req.body as Product;
-  await updateProductService(Number(id), updatedProduct);
-  res.send({ message: "Product updated" });
+  try {
+    const { id } = req.params;
+    const updatedProduct = req.body as Product;
+    await updateProductService(Number(id), updatedProduct);
+    res.send({ message: "Product updated" });
+  } catch (error) {
+    res.sendStatus(404);
+  }
 }
 
 export async function deleteProductController(
